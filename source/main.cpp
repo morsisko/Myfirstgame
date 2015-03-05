@@ -11,6 +11,22 @@
 #include "../headers/results.h"
 using namespace std;
 
+void restart(Bird &bird, Pipes &pipes, Pipes &pipes2, Results &results, bool &colision)
+{
+    bird.points = 0;
+    bird.speed = 3.5;
+    bird.y = 300;
+    pipes.x = 800;
+    pipes.speed = 4.5;
+    pipes.rand_chimneys();
+    pipes2.x = 1200;
+    pipes2.speed = 4.5;
+    pipes2.rand_chimneys();
+    colision = false;
+    results.import_file();
+
+}
+
 string setForm(int points)
 {
     string form = "";
@@ -79,6 +95,12 @@ int main()
                     bird.go_up.play();
                 }
             }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && bird.speed == 0)
+            {
+                restart(bird, pipes, pipes2, results, colision);
+                cout <<"hmm?"<<endl;
+            }
+
         }
 
         bird.over_chimney(pipes); // sprawdzanie czy
@@ -99,7 +121,12 @@ int main()
                 results.save();
             }
             error.setString("Przegrales! Zdobyles " + bird.return_points() + setForm(bird.points) + "\n" +
-                            "Twoj najlepszy wynik to " + results.return_points() + setForm(results.best_result));
+                            "Twoj najlepszy wynik to " + results.return_points() + setForm(results.best_result) + "\n" +
+                            "Aby zagrac jeszcze raz wcisnij ENTER");
+        }
+        else
+        {
+             error.setString("");
         }
         text.setString(bird.return_points());
         bird.move_bird(); // ruch ptaka
