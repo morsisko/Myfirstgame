@@ -14,8 +14,9 @@ class Results
     fstream results;
     string line;
     int best_result;
+    bool cheating = false;
 
-    void import_file();
+    int import_file();
 
     bool check(int actuall_result);
 

@@ -12,10 +12,13 @@ using namespace std;
 
 int Bird::load_file() // metoda do ladowania grafik
 {
-    if (!texture.loadFromFile("img/flappy.png"))
+    if (!yellow_bird_texture.loadFromFile("img/flappy.png"))
         return -1;
 
-    bird.setTexture(texture);
+    bird.setTexture(yellow_bird_texture);
+
+    if (!blue_bird_texture.loadFromFile("img/flappy2.png"))
+        return -1;
 
     if (!get_point_buffer.loadFromFile("sounds/get_point.ogg"))
         return -1;
@@ -31,6 +34,8 @@ int Bird::load_file() // metoda do ladowania grafik
         return -1;
 
     die.setBuffer(die_buffer);
+
+    return 1;
 }
 
 void Bird::move_bird() // metoda poruszajaca spritem
@@ -64,14 +69,29 @@ bool Bird::check_collision(Pipes pipes)
     return false;
 }
 
-void Bird::over_chimney(Pipes &pipe)
+bool Bird::over_chimney(Pipes &pipe)
 {
     if (pipe.x <= -200) // warunek - jesli komin znajdzie sie na pozycji -200 to
     {
         pipe.x = 800; // nalezy przeniesc go na pozycje x = 800
-        get_point.play();
         points += 1; // dodac punkt graczowi
         pipe.rand_chimneys(); // wylosowac nowe dlugosci kominow
         cout<<points<<std::endl;
+        return true;
     }
+
+    else
+    {
+        return false;
+    }
+}
+
+void Bird::reset_bird()
+{
+    speed = 3.5; // fall down speed
+    y = 300;
+    x = 30;
+    length = 50;
+    width = 50;
+    points = 0;
 }

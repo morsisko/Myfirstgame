@@ -62,9 +62,11 @@
 			<Add directory="D:/SFML-2.2/lib" />
 		</Linker>
 		<Unit filename="headers/bird.h" />
+		<Unit filename="headers/game.h" />
 		<Unit filename="headers/pipes.h" />
 		<Unit filename="headers/results.h" />
 		<Unit filename="source/bird.cpp" />
+		<Unit filename="source/game.cpp" />
 		<Unit filename="source/main.cpp" />
 		<Unit filename="source/pipes.cpp" />
 		<Unit filename="source/results.cpp" />

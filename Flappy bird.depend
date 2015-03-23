@@ -571,7 +571,7 @@
 	<fstream>
 	"results.h"
 
-1425314092 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\bird.cpp
+1427026951 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\bird.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -583,7 +583,7 @@
 	"../headers/bird.h"
 	"../headers/pipes.h"
 
-1425122157 c:\users\mors.michalpc\c++ projects\flappy bird\headers\bird.h
+1427038930 c:\users\mors.michalpc\c++ projects\flappy bird\headers\bird.h
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -603,7 +603,7 @@
 	<time.h>
 	<fstream>
 
-1425314092 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\pipes.cpp
+1426874940 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\pipes.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -615,18 +615,19 @@
 	"../headers/pipes.h"
 	"../headers/bird.h"
 
-1425314092 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\results.cpp
+1427037965 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\results.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<SFML/System.hpp>
+	<Windows.h>
 	<iostream>
 	<sstream>
 	<time.h>
 	<fstream>
 	"../headers/results.h"
 
-1424980630 c:\users\mors.michalpc\c++ projects\flappy bird\headers\results.h
+1427037902 c:\users\mors.michalpc\c++ projects\flappy bird\headers\results.h
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -636,7 +637,7 @@
 	<time.h>
 	<fstream>
 
-1425314109 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\main.cpp
+1426931885 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\main.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -648,4 +649,29 @@
 	"../headers/pipes.h"
 	"../headers/bird.h"
 	"../headers/results.h"
+	"../headers/game.h"
+
+1427038981 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\game.cpp
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<iostream>
+	<sstream>
+	<time.h>
+	<fstream>
+	"../headers/pipes.h"
+	"../headers/bird.h"
+	"../headers/results.h"
+	"../headers/game.h"
+
+1427026951 c:\users\mors.michalpc\c++ projects\flappy bird\headers\game.h
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<iostream>
+	<sstream>
+	<time.h>
+	<fstream>
 

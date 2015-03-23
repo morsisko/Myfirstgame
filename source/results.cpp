@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include <Windows.h>
 #include <iostream>
 #include <sstream>
 #include <time.h>
@@ -10,20 +11,27 @@
 using namespace std;
 
 
-void Results::import_file()
+int Results::import_file()
 {
     results.open("score.txt", ios::in);
     if (results.good() == false)
     {
         cout << "Error! score.txt";
-        exit(0);
+        return -1;
     }
 
     while(getline(results, line))
     {
+        if (atoi(line.c_str()) % 128 == 0)
         best_result = atoi(line.c_str()) / 128;
+        else
+        {
+            MessageBox(NULL,"Cheating! Go to score.txt and set it to 0!","ERROR",NULL);
+            return -1;
+        }
     }
     results.close();
+        return 1;
 }
 
 bool Results::check(int actuall_result)

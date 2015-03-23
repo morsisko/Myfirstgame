@@ -24,6 +24,7 @@ int Pipes::load_file() // ladowanie spritow kominow
     if (!texture_down_pipe.loadFromFile("img/pipe_down.png"))
         return -1;
     pipe_down.setTexture(texture_down_pipe);
+    return 1;
 }
 
 void Pipes::rand_chimneys() // losowanie pozycji kominow
