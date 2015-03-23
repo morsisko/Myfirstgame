@@ -571,7 +571,7 @@
 	<fstream>
 	"results.h"
 
-1427026951 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\bird.cpp
+1427130166 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\bird.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -593,7 +593,7 @@
 	<time.h>
 	<fstream>
 
-1425146437 c:\users\mors.michalpc\c++ projects\flappy bird\headers\pipes.h
+1427129654 c:\users\mors.michalpc\c++ projects\flappy bird\headers\pipes.h
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
@@ -651,7 +651,7 @@
 	"../headers/results.h"
 	"../headers/game.h"
 
-1427038981 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\game.cpp
+1427130102 source:c:\users\mors.michalpc\c++ projects\flappy bird\source\game.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>

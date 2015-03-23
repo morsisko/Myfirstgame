@@ -29,7 +29,7 @@ public:
 
     void rand_chimneys(); // losowanie pozycji kominow
 
-    void move_chimneys(); // poruszenie para kominow
+    void move_chimneys(); // poruszanie para kominow
 
 
 };

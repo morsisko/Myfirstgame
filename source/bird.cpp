@@ -10,7 +10,7 @@
 #include "../headers/pipes.h"
 using namespace std;
 
-int Bird::load_file() // metoda do ladowania grafik
+int Bird::load_file()
 {
     if (!yellow_bird_texture.loadFromFile("img/flappy.png"))
         return -1;
@@ -38,7 +38,7 @@ int Bird::load_file() // metoda do ladowania grafik
     return 1;
 }
 
-void Bird::move_bird() // metoda poruszajaca spritem
+void Bird::move_bird()
 {
     y+=speed;
     bird.setPosition(x, y);
@@ -71,12 +71,11 @@ bool Bird::check_collision(Pipes pipes)
 
 bool Bird::over_chimney(Pipes &pipe)
 {
-    if (pipe.x <= -200) // warunek - jesli komin znajdzie sie na pozycji -200 to
+    if (pipe.x <= -200)
     {
-        pipe.x = 800; // nalezy przeniesc go na pozycje x = 800
-        points += 1; // dodac punkt graczowi
-        pipe.rand_chimneys(); // wylosowac nowe dlugosci kominow
-        cout<<points<<std::endl;
+        pipe.x = 800;
+        points += 1;
+        pipe.rand_chimneys();
         return true;
     }
 

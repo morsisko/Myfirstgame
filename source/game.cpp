@@ -13,7 +13,7 @@
 using namespace std;
 
 
-string setForm(int points)
+string setForm(int points) // for pl version
 {
     string form = "";
 
@@ -117,7 +117,6 @@ void Game::menu()
             else if (buttons_text[0].getGlobalBounds().contains(mouse)&&
                      sf::Mouse::isButtonPressed(sf::Mouse::Left))
             {
-                cout << "true";
                 state = GAME;
             }
             else if (buttons_text[1].getGlobalBounds().contains(mouse)&&
@@ -162,14 +161,14 @@ void Game::single()
 {
     bird.reset_bird();
     bool colision = false;
-    Pipes pipes(800); // ustalenie pozycji pierwszego komina
-    Pipes pipes2(1200); // ustalenie pozycji drugiego i wyznaczenie przerw miedzy nimi (400 pikseli)
+    Pipes pipes(800);
+    Pipes pipes2(1200);
     background_sprite.setTexture(background);
-    background_sprite.setPosition(0,0); // ustawianie spritow
+    background_sprite.setPosition(0,0);
     floor_sprite.setTexture(floor);
     floor_sprite.setPosition(0, 550);
-    pipes.rand_chimneys(); // losowanie wielkoscio kominow
-    pipes2.rand_chimneys(); // losowanie wielkosci kominow
+    pipes.rand_chimneys();
+    pipes2.rand_chimneys();
     text.setFont(font);
     error.setFont(font);
     text.setPosition(400, 50);
@@ -183,7 +182,7 @@ void Game::single()
     if (results.import_file() != 1)
         state = END;
 
-    while (state == GAME) // glowna petla
+    while (state == GAME)
     {
         sf::Event event;
         while (window.pollEvent(event))
@@ -194,7 +193,7 @@ void Game::single()
             {
                 if (bird.speed != 0)
                 {
-                    bird.y-=40; // zmniejszanie wartosci y ptaka
+                    bird.y-=40;
                     if (sounds) bird.go_up.play();
                 }
             }
@@ -232,28 +231,28 @@ void Game::single()
             {
                 results.save();
             }
-            error.setString("Przegrales! Zdobyles " + bird.return_points() + setForm(bird.points) + "\n" +
-                            "Twoj najlepszy wynik to " + results.return_points() + setForm(results.best_result) + "\n" +
-                            "Aby zagrac jeszcze raz wcisnij ENTER \n" +
-                            "Aby wróciæ do menu wciœnij ESC.");
+            error.setString("You lost! Earned points: " + bird.return_points() + "\n" +
+                            "Your best score: " + results.return_points() + " points" + "\n" +
+                            "If you want play again press ENTER \n" +
+                            "Press ESC for back to menu.");
         }
         else
         {
             error.setString("");
         }
         text.setString(bird.return_points());
-        bird.move_bird(); // ruch ptaka
-        pipes.move_chimneys(); // ruch komina pierwszego
-        pipes2.move_chimneys(); // ruch komina drugiego
-        window.clear(); // czyszczenie okna
-        window.draw(background_sprite); // rysowanie tla
-        window.draw(pipes.pipe_up); // kominow
+        bird.move_bird();
+        pipes.move_chimneys();
+        pipes2.move_chimneys();
+        window.clear();
+        window.draw(background_sprite);
+        window.draw(pipes.pipe_up);
         window.draw(pipes.pipe_down);
         window.draw(pipes2.pipe_up);
         window.draw(pipes2.pipe_down);
-        window.draw(floor_sprite); // podlogi
+        window.draw(floor_sprite);
         window.draw(text);
-        window.draw(bird.bird); // ptaka
+        window.draw(bird.bird);
         window.draw(error);
         window.display();
     }
@@ -345,7 +344,7 @@ void Game::options()
 
     title.setPosition(800/2-title.getGlobalBounds().width/2, 20);
 
-    const int buttons = 4; // how_much buttons
+    const int buttons = 4; // how much buttons
 
     sf::Text buttons_text[buttons];
 
@@ -432,7 +431,7 @@ void Game::options()
         }
         window.clear();
 
-        for (int i = 0; i<buttons - 1; i++) // because i dont want sounds button with yellow color
+        for (int i = 0; i<buttons - 1; i++) // -1 because the sounds button is collored above
         {
             if (buttons_text[i].getGlobalBounds().contains(mouse))
                 buttons_text[i].setColor(sf::Color::Yellow);
