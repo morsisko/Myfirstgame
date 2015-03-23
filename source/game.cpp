@@ -82,7 +82,7 @@ void Game::runGame()
 
 void Game::menu()
 {
-    sf::Text title("Flappy Bird", font, 80);
+    sf::Text title("Flappy Bird by morsisko", font, 75);
     title.setStyle(sf::Text::Bold);
     title.setColor(sf::Color::Red);
 
